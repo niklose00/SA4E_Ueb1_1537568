@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+service FireflyService {
+  rpc GetPhase (PhaseRequest) returns (PhaseResponse);
+  rpc UpdatePhase (PhaseUpdate) returns (Empty);
+}
+
+message PhaseRequest {
+  int32 id = 1;
+}
+
+message PhaseResponse {
+  double phase = 1;
+}
+
+message PhaseUpdate {
+  int32 id = 1;
+  double newPhase = 2;
+}
+
+message Empty {}
